@@ -9,7 +9,7 @@ def connect_db():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="new_password",
+        password="your_password",
         database="confectionery"
     )
 
@@ -127,10 +127,10 @@ quantity_entry.grid(row=3, column=1, padx=10, pady=5)
 
 # Create a frame for the buttons
 button_frame = tk.Frame(root, bg="#BC8F8F", bd=2, relief=tk.RAISED)
-button_frame.place(relx=0.5, rely=0.35, anchor=tk.CENTER, relwidth=0.6, height=50)
+button_frame.place(relx=0.5, rely=0.35, anchor=tk.CENTER, relwidth=0.2, height=50)
 
 # Buttons
-tk.Button(button_frame, text="Add Cake", command=add_cake).pack(side=tk.LEFT, padx=10, pady=5)
+tk.Button(button_frame, text="Add Cake", command=add_cake).pack(padx=10, pady=5)
 
 # Create a frame for cancel order
 cancel_frame = tk.Frame(root, bg="#D2B48C", bd=2, relief=tk.RAISED)
@@ -146,6 +146,7 @@ cancel_button.pack(pady=10)  # Added padding to separate the button from the ent
 # Create a frame for the treeview
 tree_frame = tk.Frame(root, bg="#D2B48C", bd=2, relief=tk.RAISED)
 tree_frame.place(relx=0.5, rely=0.80, anchor=tk.CENTER, relwidth=0.9, relheight=0.2)
+
 
 # Treeview for displaying inventory
 columns = ("ID", "Name", "Flavor", "Price", "Quantity", "Date Added", "Total Bill")
